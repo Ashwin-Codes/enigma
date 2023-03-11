@@ -9,6 +9,7 @@
 	"author": "Ashwin Bhargava",
 	"license": "ISC",
 	"dependencies": {
+		"inquirer": "^8.2.5",
 		"standard-version": "^9.5.0"
 	}
 }
