@@ -1,6 +1,6 @@
 {
 	"name": "enigma",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Enigma converts files to videos and vice versa, giving users the option to upload files as videos to video platforms and retrieve them later",
 	"main": "index.js",
 	"scripts": {
