@@ -1,24 +1,22 @@
-const inquirer = require("inquirer");
-
-async function promptOptions(name, choicesArr) {
-	return await inquirer.prompt({
-		name: name,
-		type: "list",
-		message: "Pick an option :",
-		prefix: " ",
-		choices: choicesArr.map((value) => {
-			return value;
-		}),
-	});
-}
+const { promptOptions } = require("./utility/userInput");
+const encode = require("./features/encode/encode");
+const which = require("which");
 
 async function main() {
+	// Check if ffmpeg is installed
+	try {
+		await which("ffmpeg");
+	} catch (err) {
+		console.error("Enigma requires ffmpeg to work. Please install ffmpeg (https://ffmpeg.org/) to continue.");
+		process.exit();
+	}
+
 	const choices = ["Encode", "Decode", "Download"];
 	const option = await promptOptions("picked", choices);
 
 	switch (option.picked) {
 		case choices[0]:
-			console.log("You picked Encode");
+			encode();
 			break;
 		case choices[1]:
 			console.log("You picked Decode");
