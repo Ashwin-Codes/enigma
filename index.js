@@ -1,6 +1,7 @@
 const { promptOptions } = require("./utility/userInput");
-const encode = require("./features/encode/encode");
 const which = require("which");
+const encode = require("./features/encode/encode");
+const decode = require("./features/decode/decode");
 
 async function main() {
 	// Check if ffmpeg is installed
@@ -19,7 +20,7 @@ async function main() {
 			encode();
 			break;
 		case choices[1]:
-			console.log("You picked Decode");
+			decode();
 			break;
 		case choices[2]:
 			console.log("You picked Download");
